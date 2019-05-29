@@ -20,7 +20,6 @@ public class PracticeScoreboard extends BadblockScoreboardGenerator {
     private BadblockPlayer player;
 
     public PracticeScoreboard(BadblockPlayer player) {
-        System.out.println("testttt");
         this.objective = GameAPI.getAPI().buildCustomObjective("practice");
         this.player = player;
 
