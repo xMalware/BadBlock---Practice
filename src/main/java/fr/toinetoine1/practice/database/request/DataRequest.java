@@ -5,21 +5,38 @@ package fr.toinetoine1.practice.database.request;
 */
 
 import fr.badblock.gameapi.players.BadblockPlayer;
+import fr.toinetoine1.practice.data.Mode;
 import fr.toinetoine1.practice.data.PPlayer;
 import fr.toinetoine1.practice.data.Rank;
+import fr.toinetoine1.practice.data.kit.PlayerModeInfo;
+import fr.toinetoine1.practice.data.kit.RankedPlayerModeInfo;
 import fr.toinetoine1.practice.database.DatabaseManager;
+import fr.toinetoine1.practice.utils.GsonFactory;
+import org.apache.commons.lang.StringUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DataRequest {
 
-    public static void selectUser(BadblockPlayer badblockPlayer){
+    public static PPlayer selectUser(BadblockPlayer badblockPlayer){
         if(!hasUser(badblockPlayer) && !PPlayer.contains(badblockPlayer.getName())){
-            PPlayer.getPlayers().put(badblockPlayer.getName(), new PPlayer(badblockPlayer, Rank.getLessRank()));
-            return;
+            Map<Mode, PlayerModeInfo> infos = new HashMap<>();
+            for(Mode mode : Mode.values()){
+                if(mode.isRanked()){
+                    infos.put(mode, new RankedPlayerModeInfo(0,0, 2000));
+                } else {
+                    infos.put(mode, new PlayerModeInfo(0,0));
+                }
+            }
+
+            int badPoints = infos.entrySet().stream().filter(modeInfoEntry -> modeInfoEntry.getKey().isRanked()).filter(modePlayerModeInfoEntry -> modePlayerModeInfoEntry.getKey() == Mode.RANKEDONE).map(Map.Entry::getValue).mapToInt(value -> ((RankedPlayerModeInfo) value).getPoints()).sum();
+            PPlayer.init(badblockPlayer, infos, Rank.getRankFromBadPoints(badPoints));
+            return PPlayer.get(badblockPlayer);
         }
 
         try {
@@ -30,16 +47,22 @@ public class DataRequest {
             final ResultSet resultSet = preparedStatement.getResultSet();
 
             while (resultSet.next()) {
-                Rank rank = Rank.getRankFromPower(resultSet.getInt("rankPower"));
-                final Rank rankName = Rank.getRankByName(resultSet.getString("rankName"));
+                Map<Mode, PlayerModeInfo> infos = new HashMap<>();
+                for(Mode mode : Mode.values()){
+                    if(mode.isRanked()){
+                        infos.put(mode, GsonFactory.getCompactGson().fromJson(resultSet.getString(mode.getColomnName()), RankedPlayerModeInfo.class));
+                    } else {
+                        System.out.println(resultSet.getString(mode.getColomnName()));
+                        infos.put(mode, GsonFactory.getCompactGson().fromJson(resultSet.getString(mode.getColomnName()), PlayerModeInfo.class));
+                    }
+                }
 
-                if(rank != rankName)
-                    rank = rankName;
+                int badPoints = infos.entrySet().stream().filter(modeInfoEntry -> modeInfoEntry.getKey().isRanked()).filter(modePlayerModeInfoEntry -> modePlayerModeInfoEntry.getKey() == Mode.RANKEDONE).map(Map.Entry::getValue).mapToInt(value -> ((RankedPlayerModeInfo) value).getPoints()).sum();
 
                 if (PPlayer.contains(badblockPlayer.getName()))
                     PPlayer.getPlayers().remove(badblockPlayer.getName());
 
-                PPlayer.init(badblockPlayer, rank);
+                PPlayer.init(badblockPlayer, infos, Rank.getRankFromBadPoints(badPoints));
             }
 
             preparedStatement.close();
@@ -48,7 +71,7 @@ public class DataRequest {
             e.printStackTrace();
         }
 
-        badblockPlayer.sendMessage("§cSuccess !");
+        return PPlayer.get(badblockPlayer);
     }
 
     public static boolean hasUser(BadblockPlayer badblockPlayer){
@@ -75,14 +98,30 @@ public class DataRequest {
             return;
         }
 
+        StringBuilder str = new StringBuilder();
+        for(Map.Entry<Mode, PlayerModeInfo> entryInfo : pPlayer.getInfos().entrySet()){
+            str.append(entryInfo.getKey().getColomnName()).append(" = ?,");
+        }
+
+        String request = "UPDATE players SET "+str.toString().substring(0, str.length() - 1)+" WHERE name = ?";
+
         try {
             final Connection connection = DatabaseManager.MAIN_DATABASE.getDatabaseAccess().getConnection();
-            final PreparedStatement preparedStatement = connection.prepareStatement("UPDATE players SET rankPower = ?, rankName = ? WHERE name = ?");
-            preparedStatement.setInt(1, pPlayer.getCustomRank().getPower());
-            preparedStatement.setString(2, pPlayer.getCustomRank().getName());
-            preparedStatement.setString(3, pPlayer.getName());
+            final PreparedStatement preparedStatement = connection.prepareStatement(request);
+            int i = 0;
+            for(Map.Entry<Mode, PlayerModeInfo> entryInfo : pPlayer.getInfos().entrySet()){
+                i++;
+                System.out.println(i);
+                if(entryInfo.getKey().isRanked()){
+                    preparedStatement.setString(i, GsonFactory.getCompactGson().toJson(entryInfo.getValue(), RankedPlayerModeInfo.class));
+                    System.out.println("ranked");
+                } else {
+                    preparedStatement.setString(i, GsonFactory.getCompactGson().toJson(entryInfo.getValue(), PlayerModeInfo.class));
+                    System.out.println("unranked");
+                }
+            }
+            preparedStatement.setString(++i, pPlayer.getName());
             preparedStatement.executeUpdate();
-            preparedStatement.close();
 
             preparedStatement.close();
             connection.close();
@@ -94,12 +133,29 @@ public class DataRequest {
     }
 
     private static void createUserInBDD(PPlayer pPlayer){
+        String column = StringUtils.join(pPlayer.getInfos().keySet().stream().map(Mode::getColomnName).toArray(), ", ");
+        StringBuilder interrogation = new StringBuilder();
+        for(int i = 0; i < pPlayer.getInfos().size(); i++){
+            if(i != 0){
+                interrogation.append(",");
+            }
+
+            interrogation.append("? ");
+        }
+
         try {
             final Connection connection = DatabaseManager.MAIN_DATABASE.getDatabaseAccess().getConnection();
-            final PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO players (name, rankPower, rankName) VALUES (?, ?, ?)");
+            final PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO players (name, "+column+") VALUES (?, "+interrogation.toString()+")");
             preparedStatement.setString(1, pPlayer.getName());
-            preparedStatement.setInt(2, pPlayer.getCustomRank().getPower());
-            preparedStatement.setString(3, pPlayer.getCustomRank().getName());
+            int i = 1;
+            for(Map.Entry<Mode, PlayerModeInfo> entryInfo : pPlayer.getInfos().entrySet()){
+                i++;
+                if(entryInfo.getKey().isRanked()){
+                    preparedStatement.setString(i, GsonFactory.getCompactGson().toJson(entryInfo.getValue(), RankedPlayerModeInfo.class));
+                } else {
+                    preparedStatement.setString(i, GsonFactory.getCompactGson().toJson(entryInfo.getValue(), PlayerModeInfo.class));
+                }
+            }
             preparedStatement.executeUpdate();
 
             preparedStatement.close();

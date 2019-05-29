@@ -3,57 +3,79 @@ package fr.toinetoine1.practice;
 import fr.badblock.gameapi.BadblockPlugin;
 import fr.badblock.gameapi.GameAPI;
 import fr.badblock.gameapi.players.BadblockPlayer;
-import fr.badblock.gameapi.players.scoreboard.BadblockScoreboardGenerator;
-import fr.badblock.gameapi.players.scoreboard.CustomObjective;
 import fr.badblock.gameapi.run.RunType;
 import fr.badblock.gameapi.utils.BukkitUtils;
 import fr.badblock.gameapi.utils.GameRules;
-import fr.toinetoine1.practice.config.BoxConfig;
-import fr.toinetoine1.practice.data.kit.KitLoader;
+import fr.toinetoine1.practice.config.Config;
+import fr.toinetoine1.practice.config.ConfigManager;
+import fr.toinetoine1.practice.core.Game;
 import fr.toinetoine1.practice.database.DatabaseManager;
-import fr.toinetoine1.practice.map.MapManager;
 import lombok.Getter;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
+import lombok.Setter;
+import org.bukkit.Location;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Practice extends BadblockPlugin {
 
     @Getter
     private static Practice instance;
+    public static final String PREFIX = "§7[§2Practice§7] §e";
+    @Getter
+    private static List<Game> games = new ArrayList<>();
+    //@Getter
+    //private static TabSort tabSort;
+    @Getter @Setter
+    private static Location spawnLoc;
 
     @Override
     public void onEnable(RunType runType) {
         instance = this;
 
         saveDefaultConfig();
-
         GameRules.doDaylightCycle.setGameRule(false);
         GameRules.spectatorsGenerateChunks.setGameRule(false);
         GameRules.doFireTick.setGameRule(false);
 
         getAPI().getBadblockScoreboard().doBelowNameHealth();
-        getAPI().formatChat(true, true);
-        getAPI().getBadblockScoreboard().doGroupsPrefix();
-        getAPI().getBadblockScoreboard().doOnDamageHologram();
-
-        getAPI().setAntiAfk(true);
         getAPI().setMapProtector(new PracticeMapProtector());
+        getAPI().setAntiAfk(true);
 
         DatabaseManager.initAllDatabaseConnections();
 
-        BoxConfig.reload(this);
-        MapManager.load(this);
         initCommandsAndEvents();
-        new KitLoader();
+        new ConfigManager();
+        //tabSort = new TabSort(this);
 
         GameAPI.logColor("§c[Practice] Loaded !");
     }
 
     @Override
     public void onDisable() {
+        for(BadblockPlayer player : GameAPI.getAPI().getOnlinePlayers()){
+            player.kickPlayer("§cLe serveur est en train de s'éteindre..");
+        }
+
         DatabaseManager.closeAllDatabaseConnections();
+
+        Config config = ConfigManager.getConfigByName("spawn.yml");
+        YamlConfiguration spawnConfig = config.getConfig();
+        spawnConfig.set("Spawn.world", spawnLoc.getWorld().getName());
+        spawnConfig.set("Spawn.x", spawnLoc.getX());
+        spawnConfig.set("Spawn.y", spawnLoc.getY());
+        spawnConfig.set("Spawn.z", spawnLoc.getZ());
+        spawnConfig.set("Spawn.yaw", spawnLoc.getYaw());
+        spawnConfig.set("Spawn.pitch", spawnLoc.getPitch());
+
+        try {
+            spawnConfig.save(config.getFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void initCommandsAndEvents(){

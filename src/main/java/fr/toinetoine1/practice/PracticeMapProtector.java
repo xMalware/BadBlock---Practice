@@ -1,6 +1,7 @@
 package fr.toinetoine1.practice;
 
-import fr.toinetoine1.practice.data.PPlayer;
+import fr.toinetoine1.practice.core.Game;
+import fr.toinetoine1.practice.team.Team;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.ArmorStand;
@@ -16,12 +17,12 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean blockPlace(BadblockPlayer player, Block block) {
-        return true;
+        return player.hasAdminMode();
     }
 
     @Override
     public boolean blockBreak(BadblockPlayer player, Block block) {
-        return true;
+        return player.hasAdminMode();
     }
 
     @Override
@@ -46,38 +47,32 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean canDrop(BadblockPlayer player) {
-        boolean can = false; // TODO
-
-
-        return can || player.hasAdminMode();
+        return player.hasAdminMode();
     }
 
     @Override
     public boolean canPickup(BadblockPlayer player) {
-        boolean can = false; // TODO
-
-
-        return can || player.hasAdminMode();
+        return player.hasAdminMode();
     }
 
     @Override
     public boolean canFillBucket(BadblockPlayer player) {
-        return player.hasAdminMode();
+        return true;
     }
 
     @Override
     public boolean canEmptyBucket(BadblockPlayer player) {
-        return player.hasAdminMode();
+        return true;
     }
 
     @Override
     public boolean canInteract(BadblockPlayer player, Action action, Block block) {
-        return false;
+        return true;
     }
 
     @Override
     public boolean canInteractArmorStand(BadblockPlayer player, ArmorStand entity) {
-        return false;
+        return true;
     }
 
     @Override
@@ -87,11 +82,12 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean canEnchant(BadblockPlayer player, Block table) {
-        return false;
+        return true;
     }
 
     @Override
     public boolean canBeingDamaged(BadblockPlayer player) {
+        System.out.println("can Being Demaged333333333333");
         return true;
     }
 
@@ -127,7 +123,7 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean allowBlockPhysics(Block block) {
-        return false;
+        return true;
     }
 
     @Override
@@ -182,12 +178,27 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean canCombust(Entity entity) {
-        return false;
+        return true;
     }
 
     @Override
     public boolean canEntityBeingDamaged(Entity entity) {
-        return false;
+        System.out.println("canEntityBeingDamaged2");
+        return true;
+    }
+
+    @Override
+    public boolean canEntityBeingDamaged(Entity entity, BadblockPlayer damagerPlayer) {
+        System.out.println("canEntityBeingDamaged");
+        if (!entity.getType().equals(EntityType.PLAYER))
+        {
+            System.out.println("return false");
+            return false;
+        }
+        System.out.println(entity.getName());
+        System.out.println(damagerPlayer.getName());
+
+        return damageCheck(damagerPlayer, (BadblockPlayer) entity);
     }
 
     @Override
@@ -195,17 +206,19 @@ public class PracticeMapProtector implements MapProtector {
         return false;
     }
 
-    @Override
-    public boolean canEntityBeingDamaged(Entity entity, BadblockPlayer damagerPlayer) {
-        if (!entity.getType().equals(EntityType.PLAYER)) {
-            return false;
+    private boolean damageCheck(BadblockPlayer killer, BadblockPlayer killed){
+        if (Game.isInGame(killed) && Game.isInGame(killer)) {
+            Team team = Team.getTeam(killed);
+            if (team != null && team.getSlave().contains(killer)) {
+                return false;
+            }
+
+            return true;
         }
 
-        return damageCheck(damagerPlayer, (BadblockPlayer) entity);
+        return false;
     }
 
-    public static boolean damageCheck(BadblockPlayer killer, BadblockPlayer killed) {
-        return PPlayer.get(killed).isAttackable();
-    }
+
 
 }

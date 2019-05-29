@@ -43,8 +43,6 @@
                             <artifactSet>
                                 <includes>
                                     <include>com.zaxxer:HikariCP</include>
-                                    <include>org.slf4j:slf4j-api</include>
-                                    <include>commons-lang:commons-lang</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
@@ -64,13 +62,7 @@
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
+            <artifactId>spigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
@@ -92,18 +84,6 @@
             <artifactId>HikariCP</artifactId>
             <version>3.2.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
-    
+
 </project>

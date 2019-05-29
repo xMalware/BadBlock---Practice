@@ -1,14 +1,11 @@
 package fr.toinetoine1.practice.database;
 
-import fr.badblock.gameapi.GameAPI;
 import fr.toinetoine1.practice.Practice;
 import fr.toinetoine1.practice.data.Rank;
-import org.bukkit.Bukkit;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import fr.toinetoine1.practice.database.request.KitRequest;
+import fr.toinetoine1.practice.database.request.MapRequest;
+import fr.toinetoine1.practice.map.MapManager;
+import org.bukkit.scheduler.BukkitRunnable;
 
 /**
  * Created by Toinetoine1 on 31/03/2019.
@@ -37,39 +34,21 @@ public enum DatabaseManager {
             databaseManager.getDatabaseAccess().initPool();
         }
 
-        initRanks();
+        Rank.initRanks();
+        KitRequest.loadKits();
+        new BukkitRunnable(){
+            @Override
+            public void run() {
+                MapManager.load();
+            }
+        }.runTaskLater(Practice.getInstance(), 15 * 20);
     }
 
     public static void closeAllDatabaseConnections(){
+        MapRequest.saveMaps();
+        KitRequest.saveKits();
         for(DatabaseManager databaseManager : DatabaseManager.values()){
             databaseManager.getDatabaseAccess().closePool();
-        }
-    }
-
-    private static void initRanks() {
-        try {
-            final Connection connection = DatabaseManager.MAIN_DATABASE.getDatabaseAccess().getConnection();
-            final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM ranks");
-
-            final ResultSet resultSet = preparedStatement.executeQuery();
-
-            while(resultSet.next()){
-                final String name = resultSet.getString("name");
-                final int power = resultSet.getInt("power");
-                final String formattedName = resultSet.getString("formattedName");
-                final Rank rank = new Rank(name, power, formattedName);
-
-                Rank.getRanks().add(rank);
-            }
-
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        if(Rank.getRanks().isEmpty()){
-            GameAPI.logColor("§cError, unable to find ranks..");
-            Bukkit.shutdown();
         }
     }
 }

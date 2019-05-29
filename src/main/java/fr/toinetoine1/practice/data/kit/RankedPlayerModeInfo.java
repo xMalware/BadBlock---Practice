@@ -4,16 +4,12 @@ package fr.toinetoine1.practice.data.kit;
     Created by Toinetoine1 on 02/04/2019
 */
 
-import fr.toinetoine1.practice.data.PPlayer;
-
-import java.util.List;
-
-public class RankedInfo extends Info{
+public class RankedPlayerModeInfo extends PlayerModeInfo {
 
     private int points;
 
-    public RankedInfo(PPlayer pPlayer, String name, int kills, int deaths, List<Kit> kits, int points) {
-        super(pPlayer, name, kills, deaths, kits);
+    public RankedPlayerModeInfo(int kills, int death, int points) {
+        super(kills, death);
         this.points = points;
     }
 
@@ -23,5 +19,9 @@ public class RankedInfo extends Info{
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public int addPoints(int points){
+        return this.points += points;
     }
 }
