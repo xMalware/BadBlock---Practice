@@ -61,6 +61,8 @@ public class Practice extends BadblockPlugin {
     @Override
     public void onDisable() {
         MapRequest.saveMaps();
+        System.out.println("bonsoir a tous 2");
+        
 
         for(BadblockPlayer player : GameAPI.getAPI().getOnlinePlayers()){
             player.kickPlayer("§cLe serveur est en train de s'éteindre..");
