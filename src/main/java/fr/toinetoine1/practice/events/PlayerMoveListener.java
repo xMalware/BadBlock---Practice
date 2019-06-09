@@ -21,7 +21,7 @@ public class PlayerMoveListener implements Listener {
             if(Game.isInGame(player)){
                 Game game = Game.get(player);
                 if(!game.isHasStarted()){
-                    player.teleport(event.getTo());
+                    player.teleport(event.getFrom());
                 }
             }
         }

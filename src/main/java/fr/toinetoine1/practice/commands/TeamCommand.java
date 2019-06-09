@@ -4,11 +4,15 @@ package fr.toinetoine1.practice.commands;
     Created by Toinetoine1 on 26/04/2019
 */
 
+import com.google.common.base.Joiner;
 import fr.badblock.gameapi.command.AbstractCommand;
 import fr.badblock.gameapi.players.BadblockPlayer;
 import fr.toinetoine1.practice.team.Team;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
+
+import java.util.stream.Collectors;
 
 public class TeamCommand extends AbstractCommand {
 
@@ -24,6 +28,7 @@ public class TeamCommand extends AbstractCommand {
         if(args.length == 0){
             player.sendMessage(Team.PREFIX+"§e/team §7- §6Voir les commandes de Team");
             player.sendMessage(Team.PREFIX+"§e/team toggle §7- §6Activer/Désactiver les demandes de Team");
+            player.sendMessage(Team.PREFIX+"§e/team info §7- §6Voir les informations de votre Team");
             player.sendMessage(Team.PREFIX+"§e/team create §7- §6Créer sa Team");
             player.sendMessage(Team.PREFIX+"§e/team leader <Pseuso> §7- §6Mettre un joueur chef");
             player.sendMessage(Team.PREFIX+"§e/team invite <Pseudo> §7- §6Ajouter un joueur");
@@ -71,6 +76,17 @@ public class TeamCommand extends AbstractCommand {
                     team.disband();
                     return true;
                 }
+            }else if(args[0].equalsIgnoreCase("info")){
+                if(!Team.isInTeam(player)){
+                    player.sendMessage(Team.PREFIX+"Vous n'avez pas de Team");
+                    return false;
+                } else {
+                    Team team = Team.getTeam(player);
+
+                    player.sendMessage(Team.PREFIX+"§cChef de team: §6" +team.getOwner().getName());
+                    player.sendMessage(Team.PREFIX+"§cJoueurs dans la team: §3" + Joiner.on(", ").join(team.getSlave().stream().map(HumanEntity::getName).collect(Collectors.toList())));
+                    return true;
+                }
             }
         } else if(args.length == 2){
             if(args[0].equalsIgnoreCase("invite")){
@@ -78,6 +94,11 @@ public class TeamCommand extends AbstractCommand {
 
                 if(target == null){
                     player.sendMessage(Team.PREFIX+"Joueur introuvable");
+                    return false;
+                }
+
+                if(player.getName().equals(target.getName())){
+                    player.sendMessage(Team.PREFIX+"Vous ne pouvez pas vous invitez vous même !");
                     return false;
                 }
 
@@ -89,6 +110,7 @@ public class TeamCommand extends AbstractCommand {
                 Team team = Team.getTeam(player);
                 if(team == null){
                     team = new Team(player);
+                    Team.getTeams().add(team);
                     player.sendMessage(Team.PREFIX+"Vous avez maintenant votre propre Team");
                 }
 
@@ -130,7 +152,7 @@ public class TeamCommand extends AbstractCommand {
                     return false;
                 }
 
-                team.setOwner(target);
+                team.setOwner(target, false);
             }
         }
 

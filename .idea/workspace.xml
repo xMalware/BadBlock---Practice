@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java" line="61" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java" line="68" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/map/MapManager.java" line="41" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a00c686-4aac-4736-9017-6dee42361b6b" name="Default Changelist" comment="" />
@@ -24,35 +25,19 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="manager@node04-dev.clusprv.badblock-network.fr" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="manager@node04-dev.clusprv.badblock-network.fr" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="manager@node04-dev.clusprv.badblock-network.fr" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="manager: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/TabSort.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="491">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
@@ -63,42 +48,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>for</find>
-      <find>hasPlayed</find>
-      <find>Enable</find>
-      <find>Node</find>
-      <find>Rank.getRanks().get</find>
-      <find>write</find>
-      <find>create</find>
-      <find>I</find>
-      <find>TextCo</find>
-      <find>invite</find>
-      <find>System.out.</find>
-      <find>heal</find>
-      <find>Join</find>
-      <find>slot</find>
-      <find>kit</find>
-      <find>team</find>
-      <find>System</find>
-      <find>lava</find>
-      <find>System.out</find>
-      <find>set</find>
-      <find>finish</find>
-      <find>damage</find>
-      <find>setIcon</find>
-      <find>getNext</find>
-      <find>tryUpd</find>
       <find>NumberForm</find>
       <find>isIntege</find>
       <find>GlobalFlags</find>
       <find>BadPoints</find>
       <find>build</find>
+      <find>TextC</find>
+      <find>isIn</find>
+      <find>arrow</find>
+      <find>TypeTo</find>
+      <find>kit</find>
+      <find>KitName</find>
+      <find>dest</find>
+      <find>BlockBr</find>
+      <find>setAmou</find>
+      <find>getRepresent</find>
+      <find>kit.get</find>
+      <find>getRepre</find>
+      <find>E</find>
+      <find>PlayerTeleportEvent</find>
+      <find>PlayerTele</find>
+      <find>createHe</find>
+      <find>//</find>
+      <find>getH</find>
+      <find>BlockBreakE</find>
+      <find>Event</find>
+      <find>BlockBreak</find>
+      <find>cancel</find>
+      <find>canInteract(</find>
+      <find>setAbso</find>
+      <find>System.out.println</find>
     </findStrings>
     <replaceStrings>
       <replace>player</replace>
@@ -111,57 +97,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/MapRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/ClickAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/kitmodifier/ModeModifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/PlayerModeInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/Stats.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/RankedPlayerModeInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerDeathListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/LeaderBoardInv.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/InfoStats.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/LeaderBoard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/EloCalculator.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerMoveListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/box/BoxManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/box/kits/IKit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/box/kits/list/TankKit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/PPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/stats/CustomStats.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/statsandparameter/stats/StatsInv.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/statsandparameter/StatsAndParameter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/HotBarSelector.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/kitmodifier/KitModifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/TeamInv.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Queue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/JoinTeamCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/teamduel/TeamInvKit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/kitmodifier/Modifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/team/Team.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerInteractAtEntityListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryDragListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/TeamCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/CustomHolder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerTeleportListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/EntityDamageListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/InteractiveHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/Icon.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/ProjectileHitListener.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/state/StatsAndParamter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/statsandparameter/StatsAndParamter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/statsandparameter/StatsAndParameter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/PracticeMapProtector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/PlayerModeInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerQuitListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerMoveListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerTeleportListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/KitCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryClickListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/RankedPlayerModeInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/ASyncPlayerChatListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/scoreboard/PracticeScoreboard.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/PPlayer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/statsandparameter/stats/StatsInv.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/KitChoice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/TabSort.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/ManageCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerQuitListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Queue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/TimeUnit.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/teamduel/TeamInv.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/DuelCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerInteractListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/DataRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/ManageCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerJoinListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/MapCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerJoinListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/HotBarSelector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/ItemBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/EntityRegainHealthListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/EntityDamageListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerDeathListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/BlockBreakListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/DataRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/kitmodifier/Modifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryClickListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/PracticeMapProtector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryDragListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/BlockPlaceListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/ItemBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/TabGroupListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/LeaderBoardInv.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/StatsRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerDropListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/map/MapManager.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -195,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,40 +221,21 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="practice" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Practice" type="b2602c69:ProjectViewProjectNode" />
               <item name="Practice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="practice" type="462c0819:PsiDirectoryNode" />
-              <item name="scoreboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Practice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="practice" type="462c0819:PsiDirectoryNode" />
-              <item name="team" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Practice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="practice" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,16 +256,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Toinetoine1\Documents\BadBlock\Practice\src\main\java\fr\toinetoine1\practice" />
-      <recent name="C:\Users\Toinetoine1\Documents\BadBlock\Practice\src\main\java\fr\toinetoine1\practice\database" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="fr.toinetoine1.practice.data.stats" />
       <recent name="fr.toinetoine1.practice.data.kit" />
       <recent name="fr.toinetoine1.practice.data" />
       <recent name="fr.toinetoine1.practice.config" />
       <recent name="fr.toinetoine1.practice.map" />
-      <recent name="fr.toinetoine1.practice" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Toinetoine1\Documents\BadBlock\Practice\src\main\java\fr\toinetoine1\practice" />
+      <recent name="C:\Users\Toinetoine1\Documents\BadBlock\Practice\src\main\java\fr\toinetoine1\practice\database" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -450,12 +416,43 @@
       <workItem from="1558969842661" duration="6194000" />
       <workItem from="1558982390828" duration="1330000" />
       <workItem from="1559060169033" duration="1130000" />
-      <workItem from="1559135549938" duration="857000" />
+      <workItem from="1559135549938" duration="11528000" />
+      <workItem from="1559151285082" duration="4139000" />
+      <workItem from="1559158493537" duration="3085000" />
+      <workItem from="1559165691394" duration="3013000" />
+      <workItem from="1559205623045" duration="4510000" />
+      <workItem from="1559219307312" duration="2438000" />
+      <workItem from="1559222087594" duration="12289000" />
+      <workItem from="1559250013428" duration="5793000" />
+      <workItem from="1559296424778" duration="674000" />
+      <workItem from="1559297387896" duration="1969000" />
+      <workItem from="1559303145628" duration="1795000" />
+      <workItem from="1559307110191" duration="1788000" />
+      <workItem from="1559312071038" duration="1731000" />
+      <workItem from="1559314152219" duration="2576000" />
+      <workItem from="1559327022461" duration="1909000" />
+      <workItem from="1559337986729" duration="2755000" />
+      <workItem from="1559383063871" duration="10242000" />
+      <workItem from="1559408907184" duration="853000" />
+      <workItem from="1559427012027" duration="1289000" />
+      <workItem from="1559470234407" duration="10016000" />
+      <workItem from="1559482572146" duration="1374000" />
+      <workItem from="1559488355910" duration="10668000" />
+      <workItem from="1559579784749" duration="5876000" />
+      <workItem from="1559660174981" duration="5037000" />
+      <workItem from="1559735676505" duration="8872000" />
+      <workItem from="1559750685687" duration="5265000" />
+      <workItem from="1559822722025" duration="599000" />
+      <workItem from="1559824187710" duration="5987000" />
+      <workItem from="1559930935375" duration="73000" />
+      <workItem from="1559994166244" duration="617000" />
+      <workItem from="1559995577619" duration="622000" />
+      <workItem from="1560012618228" duration="669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344207000" />
+    <option name="totallyTimeSpent" value="473401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,10 +464,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28411514" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2867804" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -511,411 +508,403 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/PracticeMapProtector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="89" column="60" lean-forward="true" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
-          <folding>
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#904#905#0" expanded="true" />
-            <element signature="e#975#976#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1508#1509#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#3643#3644#0" expanded="true" />
-            <element signature="e#3670#3671#0" expanded="true" />
-            <element signature="e#3922#3923#0" expanded="true" />
-            <element signature="e#3987#3988#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Libs/API_dev.jar!/fr/badblock/gameapi/players/BadblockPlayer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="267" lean-forward="true" selection-start-line="267" selection-end-line="267" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerQuitListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/event/player/AsyncPlayerChatEvent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/Rank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/Mode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding>
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#958#959#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerMoveListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/KitCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="101" column="43" selection-start-line="101" selection-start-column="43" selection-end-line="101" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/Kit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/PlayerModeInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryClickListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/ModifiedKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/RankedPlayerModeInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/EloCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Libs/API_dev.jar!/fr/badblock/gameapi/utils/general/TimeUnit.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="e#2918#2919#0" expanded="true" />
-            <element signature="e#3001#3002#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa9332.10139/com/SirBlobman/enderpearl/utility/ECooldownUtil.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/JoinTeamCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Libs/API_dev.jar!/fr/badblock/api/common/utils/flags/GlobalFlags.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerTeleportListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/ASyncPlayerChatListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/team/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/statsandparameter/stats/StatsInv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/KitChoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/ManageCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="120" column="121" lean-forward="true" selection-start-line="120" selection-start-column="121" selection-end-line="120" selection-end-column="121" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/scoreboard/PracticeScoreboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="55" column="218" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="218" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/PPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-199">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="353" lean-forward="true" selection-start-line="353" selection-end-line="353" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/teamduel/TeamInv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerInteractListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryCloseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/DataRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#1303#1439#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/MapRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="36" column="33" lean-forward="true" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/MapCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/SpawnCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="24" column="93" lean-forward="true" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Libs/API_dev.jar!/fr/badblock/gameapi/events/fakedeaths/FightingDeathEvent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerJoinListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/HotBarSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="20" column="114" lean-forward="true" selection-start-line="20" selection-start-column="114" selection-end-line="20" selection-end-column="114" />
+        <state relative-caret-position="408">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/ItemBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="313" column="50" selection-start-line="313" selection-start-column="50" selection-end-line="313" selection-end-column="50" />
+        <state relative-caret-position="286">
+          <caret line="851" column="28" selection-start-line="851" selection-start-column="28" selection-end-line="851" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../Libs/API_dev.jar!/fr/badblock/gameapi/events/fakedeaths/FakeDeathEvent.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/net/minecraft/server/v1_8_R3/DataWatcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="124" column="24" lean-forward="true" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/ChatColor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/kitmodifier/Modifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/EntityDamageListener.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/inventory/Inventory.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="286">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="489" column="98" lean-forward="true" selection-start-line="489" selection-start-column="98" selection-end-line="489" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/InfoRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/PPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#1138#1139#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/DataRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/statsandparameter/StatsAndParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../Libs/API_dev.jar!/fr/badblock/gameapi/players/BadblockPlayer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/net/minecraft/server/v1_8_R3/EntityHuman.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="1565" column="16" selection-start-line="1565" selection-start-column="16" selection-end-line="1565" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/sql/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="365" column="10" selection-start-line="365" selection-start-column="10" selection-end-line="365" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/sql/PreparedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="65" column="6" lean-forward="true" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/StatsRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="897">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerDeathListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/RankedPlayerModeInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="575">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/LeaderBoardInv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
+        <state relative-caret-position="255">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/TeamCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/DatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/map/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/map/MapManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        <state relative-caret-position="560">
+          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
           <folding>
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#1467#1601#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="803" column="16" selection-start-line="803" selection-start-column="16" selection-end-line="803" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/event/block/BlockBreakEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/event/EventPriority.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../Libs/API_dev.jar!/fr/badblock/gameapi/GameAPI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+          <folding>
+            <element signature="e#10567#10568#0" expanded="true" />
+            <element signature="e#10593#10594#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/data/kit/Kit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding>
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/EntityRegainHealthListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="49" column="77" lean-forward="true" selection-start-line="49" selection-start-column="77" selection-end-line="49" selection-end-column="77" />
+        <state relative-caret-position="330">
+          <caret line="85" column="31" lean-forward="true" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/DuelCommand.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/event/EventHandler.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        <state relative-caret-position="253">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/MapCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="790">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/BlockPlaceListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/EntityDamageListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/ASyncPlayerChatListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryClickListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-696">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryCloseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/InventoryDragListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerConsumeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerDeathListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-866">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/BlockBreakListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/PracticeMapProtector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerDropListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerInteractListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerMoveListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerQuitListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/TabGroupListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="162" column="31" lean-forward="true" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerTeleportListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerJoinListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#1545#2197#0" expanded="true" />
+            <element signature="e#2196#2197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="235" lean-forward="true" selection-start-line="235" selection-end-line="235" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10496#14565#0" expanded="true" />
+            <element signature="e#14564#14565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/map/MapManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/KitCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/ManageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/TabSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="491">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>

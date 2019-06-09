@@ -14,15 +14,17 @@ public class HotBarSelector {
         player.clearInventory();
         player.getInventory().setArmorContents(null);
 
-        ItemStack ranked = new ItemBuilder(Material.IRON_SWORD).unbreakable(true).displayname("§aUnranked").build();
-        ItemStack unranked = new ItemBuilder(Material.DIAMOND_SWORD).unbreakable(true).displayname("§cRanked").build();
+        ItemStack ranked = new ItemBuilder(Material.IRON_SWORD).addUnbreakbleNBTTag().displayname("§aUnranked").build();
+        ItemStack unranked = new ItemBuilder(Material.DIAMOND_SWORD).addUnbreakbleNBTTag().displayname("§cRanked").build();
         ItemStack kitModification = new ItemBuilder(Material.BOOK).displayname("§9Modification de Kit").build();
+        ItemStack leaderboard = new ItemBuilder(new ItemStack(Material.SKULL_ITEM, 1, (short) 3)).displayname("§7Leaderboard").build();
         ItemStack groups = new ItemBuilder(Material.BOOKSHELF).displayname("§bListe des groupes").build();
         ItemStack statsAndParamter = new ItemBuilder(Material.PAPER).displayname("§cStats et Parametres").build();
 
         player.getInventory().setItem(0, ranked);
         player.getInventory().setItem(1, unranked);
         player.getInventory().setItem(2, kitModification);
+        player.getInventory().setItem(4, leaderboard);
         player.getInventory().setItem(5, groups);
         player.getInventory().setItem(8, statsAndParamter);
     }

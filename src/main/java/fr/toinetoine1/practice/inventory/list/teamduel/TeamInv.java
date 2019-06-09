@@ -79,7 +79,7 @@ public class TeamInv extends InteractiveHolder {
             }
             this.getInventory().setItem(nextPageSlot, new ItemStack(Material.AIR));
             setIcon(nextPageSlot, new Icon(Material.AIR));
-            setIcon(previousPageSlot, new Icon(createHeadByData("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==", 1, "§cPage précédente", ""))
+            setIcon(previousPageSlot, new Icon(ItemBuilder.createHeadByData("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==", 1, "§cPage précédente", ""))
                     .addClickAction(new ClickAction() {
                         @Override
                         public void execute(BadblockPlayer badblockPlayer, ItemStack clickedItem) {
@@ -98,7 +98,7 @@ public class TeamInv extends InteractiveHolder {
 
             if (teamSlot.size() == realSlot) {
                 int finalI = i;
-                setIcon(nextPageSlot, new Icon(createHeadByData("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19", 1, "§cPage suivante", ""))
+                setIcon(nextPageSlot, new Icon(ItemBuilder.createHeadByData("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19", 1, "§cPage suivante", ""))
                         .addClickAction(new ClickAction() {
                             @Override
                             public void execute(BadblockPlayer badblockPlayer, ItemStack clickedItem) {
@@ -150,37 +150,6 @@ public class TeamInv extends InteractiveHolder {
                         }
                     }));
         }
-    }
-
-    private ItemStack createHeadByData(String data, int amount, String name, String lore) {
-        ItemStack item = new ItemStack(Material.SKULL_ITEM);
-        item.setDurability((short) 3);
-        item.setAmount(amount);
-        ItemMeta meta = item.getItemMeta();
-        if (!lore.equals("")) {
-            String[] loreListArray = lore.split("__");
-            List<String> loreList = new ArrayList<>();
-            for (String s : loreListArray) {
-                loreList.add(s.replace("&", "§"));
-            }
-            meta.setLore(loreList);
-        }
-        if (!name.equals("")) {
-            meta.setDisplayName(name.replace("&", "§"));
-        }
-        item.setItemMeta(meta);
-        SkullMeta headMeta = (SkullMeta) item.getItemMeta();
-        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
-        profile.getProperties().put("textures", new Property("textures", data));
-        Field profileField;
-        try {
-            profileField = headMeta.getClass().getDeclaredField("profile");
-            profileField.setAccessible(true);
-            profileField.set(headMeta, profile);
-        } catch (Exception e) {
-        }
-        item.setItemMeta(headMeta);
-        return item;
     }
 
     private ItemStack createHead(String owner, String displayName, List<String> lore) {

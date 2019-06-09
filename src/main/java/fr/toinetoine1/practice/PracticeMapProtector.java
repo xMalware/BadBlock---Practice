@@ -22,7 +22,25 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean blockBreak(BadblockPlayer player, Block block) {
-        return player.hasAdminMode();
+        if(player.hasAdminMode()){
+            return true;
+        }
+
+        if (Game.isInGame(player)) {
+            Game game = Game.get(player);
+            player.sendMessage("is in game");
+            if(game.getPlacedBlocks().contains(block)){
+                player.sendMessage("can break block");
+                game.getPlacedBlocks().remove(block);
+                return true;
+            } else {
+                player.sendMessage("boeuf");
+                return false;
+            }
+        }
+
+        player.sendMessage("poisson");
+        return false;
     }
 
     @Override
@@ -87,7 +105,6 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean canBeingDamaged(BadblockPlayer player) {
-        System.out.println("can Being Demaged333333333333");
         return true;
     }
 
@@ -98,7 +115,7 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean canBlockDamage(Block block) {
-        return false;
+        return true;
     }
 
     @Override
@@ -183,27 +200,21 @@ public class PracticeMapProtector implements MapProtector {
 
     @Override
     public boolean canEntityBeingDamaged(Entity entity) {
-        System.out.println("canEntityBeingDamaged2");
         return true;
     }
 
     @Override
     public boolean canEntityBeingDamaged(Entity entity, BadblockPlayer damagerPlayer) {
-        System.out.println("canEntityBeingDamaged");
         if (!entity.getType().equals(EntityType.PLAYER))
         {
-            System.out.println("return false");
             return false;
         }
-        System.out.println(entity.getName());
-        System.out.println(damagerPlayer.getName());
-
         return damageCheck(damagerPlayer, (BadblockPlayer) entity);
     }
 
     @Override
     public boolean destroyArrow() {
-        return false;
+        return true;
     }
 
     private boolean damageCheck(BadblockPlayer killer, BadblockPlayer killed){

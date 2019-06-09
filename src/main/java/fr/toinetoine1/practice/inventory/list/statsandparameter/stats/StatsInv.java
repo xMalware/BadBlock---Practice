@@ -59,7 +59,7 @@ public class StatsInv extends CustomHolder {
                     .addClickAction(new ClickAction() {
                         @Override
                         public void execute(BadblockPlayer badblockPlayer, ItemStack clickedItem) {
-                            badblockPlayer.openInventory(new StatsAndParameter().getInventory());
+                            badblockPlayer.openInventory(new StatsAndParameter(badblockPlayer).getInventory());
                         }
                     }));
         }

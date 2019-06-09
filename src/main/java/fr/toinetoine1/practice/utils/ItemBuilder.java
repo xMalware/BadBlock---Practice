@@ -15,11 +15,17 @@
 package fr.toinetoine1.practice.utils;
 
 import com.google.gson.Gson;
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
+import net.minecraft.server.v1_8_R3.NBTTagByte;
+import net.minecraft.server.v1_8_R3.NBTTagCompound;
+import net.minecraft.server.v1_8_R3.NBTTagList;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -27,6 +33,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.material.MaterialData;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -229,9 +236,6 @@ public class ItemBuilder {
      */
     public ItemBuilder lore(String line) {
         Validate.notNull(line, "The Line is null.");
-        System.out.println(lore);
-        System.out.println(andSymbol);
-        System.out.println(ChatColor.translateAlternateColorCodes('&', line));
         lore.add(andSymbol ? ChatColor.translateAlternateColorCodes('&', line) : line);
         return this;
     }
@@ -312,6 +316,15 @@ public class ItemBuilder {
         if(meta == null)
             meta = item.getItemMeta();
         meta.spigot().setUnbreakable(unbreakable);
+        return this;
+    }
+
+    public ItemBuilder addUnbreakbleNBTTag(){
+        net.minecraft.server.v1_8_R3.ItemStack nmsStack = CraftItemStack.asNMSCopy(item);
+        NBTTagCompound compound = (nmsStack.hasTag()) ? nmsStack.getTag() : new NBTTagCompound();
+        compound.set("Unbreakable", new NBTTagByte((byte) 1));
+        nmsStack.setTag(compound);
+        item = CraftItemStack.asBukkitCopy(nmsStack);
         return this;
     }
 
@@ -831,5 +844,36 @@ public class ItemBuilder {
             }
 
         }
+    }
+
+    public static ItemStack createHeadByData(String data, int amount, String name, String lore) {
+        ItemStack item = new ItemStack(Material.SKULL_ITEM);
+        item.setDurability((short) 3);
+        item.setAmount(amount);
+        ItemMeta meta = item.getItemMeta();
+        if (!lore.equals("")) {
+            String[] loreListArray = lore.split("__");
+            List<String> loreList = new ArrayList<>();
+            for (String s : loreListArray) {
+                loreList.add(s.replace("&", "§"));
+            }
+            meta.setLore(loreList);
+        }
+        if (!name.equals("")) {
+            meta.setDisplayName(name.replace("&", "§"));
+        }
+        item.setItemMeta(meta);
+        SkullMeta headMeta = (SkullMeta) item.getItemMeta();
+        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
+        profile.getProperties().put("textures", new Property("textures", data));
+        Field profileField;
+        try {
+            profileField = headMeta.getClass().getDeclaredField("profile");
+            profileField.setAccessible(true);
+            profileField.set(headMeta, profile);
+        } catch (Exception e) {
+        }
+        item.setItemMeta(headMeta);
+        return item;
     }
 }

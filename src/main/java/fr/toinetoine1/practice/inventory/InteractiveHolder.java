@@ -3,7 +3,6 @@ package fr.toinetoine1.practice.inventory;
 /*
     Created by Toinetoine1 on 18/05/2019
 */
-
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 
@@ -21,6 +20,7 @@ public class InteractiveHolder extends CustomHolder{
     public Inventory getInventory() {
         return inventory;
     }
+
 
     @Override
     public void setIcon(int position, Icon icon) {

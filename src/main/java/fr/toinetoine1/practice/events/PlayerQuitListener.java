@@ -21,6 +21,7 @@ public class PlayerQuitListener extends BadListener {
     public void onQuit(PlayerQuitEvent event) {
         BadblockPlayer badblockPlayer = (BadblockPlayer) event.getPlayer();
         PPlayer pPlayer = PPlayer.get(badblockPlayer);
+        pPlayer.getCustomStats().setTimePlayed((System.currentTimeMillis() - pPlayer.getCurrentTime()) + pPlayer.getCustomStats().getTimePlayed());
         event.setQuitMessage(null);
 
         if (Game.isInGame(badblockPlayer)) {
@@ -39,13 +40,19 @@ public class PlayerQuitListener extends BadListener {
 
             if(team.getOwner().getName().equals(badblockPlayer.getName())){
                 if(!team.getSlave().isEmpty()){
-                    team.setOwner(team.getSlave().get(0));
+                    team.sendGroupMessage(Team.PREFIX+"§cLe chef a quitté le serveur !");
+                    team.setOwner(team.getSlave().get(0), true);
+                    team.getSlave().remove(0);
                 } else {
                     Team.getTeams().remove(team);
                 }
             } else {
-                team.sendGroupMessage("Le joueur "+badblockPlayer.getName()+" a quitté le serveur");
+                team.sendGroupMessage(Team.PREFIX+"Le joueur "+badblockPlayer.getName()+" a quitté le serveur");
                 team.getSlave().remove(badblockPlayer);
+                if(Queue.isAlreadyInQueue(team.getOwner())){
+                    Queue.removePlayer(team.getOwner());
+                    team.sendGroupMessage(Team.PREFIX+"Vous avez quitté la file d'attente");
+                }
             }
         }
 

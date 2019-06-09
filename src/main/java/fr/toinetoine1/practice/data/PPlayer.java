@@ -1,15 +1,14 @@
 package fr.toinetoine1.practice.data;
 
 import fr.badblock.gameapi.players.BadblockPlayer;
-import fr.toinetoine1.practice.data.kit.Kit;
 import fr.toinetoine1.practice.data.kit.PlayerModeInfo;
 import fr.toinetoine1.practice.data.kit.RankedPlayerModeInfo;
+import fr.toinetoine1.practice.data.kit.Stats;
+import fr.toinetoine1.practice.data.stats.CustomStats;
 import fr.toinetoine1.practice.scoreboard.PracticeScoreboard;
 import lombok.Data;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Data
@@ -21,12 +20,15 @@ public class PPlayer {
     private Rank customRank;
     private String name;
     private Map<Mode, PlayerModeInfo> infos;
+    private CustomStats customStats;
+    private transient long currentTime;
 
-    public PPlayer(BadblockPlayer player, Map<Mode, PlayerModeInfo> infos, Rank customRank) {
+    public PPlayer(BadblockPlayer player, Map<Mode, PlayerModeInfo> infos, Rank customRank, CustomStats customStats) {
         this.player = player;
         this.name = player.getName();
         this.infos = infos;
         this.customRank = customRank;
+        this.customStats = customStats;
     }
 
     public void unload(){
@@ -58,8 +60,8 @@ public class PPlayer {
         return players.get(player.getName());
     }
 
-    public static PPlayer init(BadblockPlayer player, Map<Mode, PlayerModeInfo> infos, Rank customRank){
-        return players.put(player.getName(), new PPlayer(player, infos, customRank));
+    public static PPlayer init(BadblockPlayer player, Map<Mode, PlayerModeInfo> infos, Rank customRank, CustomStats customStats){
+        return players.put(player.getName(), new PPlayer(player, infos, customRank, customStats));
     }
 
     public static boolean contains(String name) {

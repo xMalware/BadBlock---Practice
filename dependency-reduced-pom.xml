@@ -65,6 +65,13 @@
       <scope>system</scope>
       <systemPath>${basedir}/../Libs/API_dev.jar</systemPath>
     </dependency>
+    <dependency>
+      <groupId>com.holograpohicdysplay.api</groupId>
+      <artifactId>api</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../Libs/HolographicDisplays.jar</systemPath>
+    </dependency>
   </dependencies>
   <properties>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

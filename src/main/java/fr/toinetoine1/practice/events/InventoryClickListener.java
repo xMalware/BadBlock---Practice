@@ -42,25 +42,14 @@ public class InventoryClickListener extends BadListener {
         if (event.getWhoClicked() instanceof Player) {
             BadblockPlayer player = (BadblockPlayer) event.getWhoClicked();
 
-            if (player.getInventory().getName().equals(event.getInventory().getName())) {
-                if (!player.hasAdminMode())
-                    event.setCancelled(true);
-            }
-
-            //Check if the inventory is custom
-
             if (event.getView().getTopInventory().getHolder() instanceof CustomHolder) {
-                System.out.println("cancel event");
                 event.setCancelled(true);
 
-                //Check if the item the player clicked on is valid
                 ItemStack current = event.getCurrentItem();
                 ItemStack cursor = event.getCursor();
                 if (event.getRawSlot() == -999) return;
 
-                //Get our CustomHolder
                 CustomHolder customHolder = (CustomHolder) event.getView().getTopInventory().getHolder();
-                System.out.println(event.getRawSlot());
 
                 if (customHolder instanceof Modifier) {
                     if (current != null && current.getType() == Material.STAINED_GLASS_PANE || event.getRawSlot() >= 54)
@@ -73,36 +62,28 @@ public class InventoryClickListener extends BadListener {
                             event.setCancelled(true);
                             return;
                     }
-                    System.out.println("test");
 
                     if (current == null)
                         return;
 
                     if (current.getType() == Material.EMERALD && event.getRawSlot() == event.getInventory().getSize() - 1) {
-                        System.out.println(current);
-                        System.out.println(cursor);
                         if (cursor == null || cursor.getType() == Material.AIR) {
                             Inventory inventory = event.getView().getTopInventory();
                             lastMoves.remove(player);
                             canCloseInv.add(player);
                             List<ItemStack> newInv = new ArrayList<>();
                             for (int i = 36; i <= 44; i++) {
-                                addItem(inventory, newInv, i);
+                                newInv.add(inventory.getItem(i));
                             }
                             for (int i = 0; i <= 26; i++) {
-                                addItem(inventory, newInv, i);
+                                newInv.add(inventory.getItem(i));
                             }
                             PPlayer pPlayer = PPlayer.get(player);
                             String[] splitted = inventory.getName().split(" ");
-                            System.out.println(splitted[0]);
-                            System.out.println(splitted[2]);
                             Mode mode = Arrays.stream(Mode.values()).filter(mode1 -> ChatColor.stripColor(mode1.getFormattedName()).equals(ChatColor.stripColor(splitted[0]))).findFirst().get();
                             ItemStack[] contents = newInv.stream().toArray(value -> new ItemStack[value]);
 
-                            System.out.println(pPlayer.getInfos().get(mode).getModified());
                             pPlayer.getInfos().get(mode).getModified().put(splitted[2], new ModifiedKit(splitted[2], contents));
-                            System.out.println("new kit");
-                            System.out.println(pPlayer.getInfos().get(mode).getModified());
                             player.closeInventory();
                             player.sendMessage(Practice.PREFIX + "Votre inventaire a été sauvegardé");
                         } else {
@@ -110,8 +91,6 @@ public class InventoryClickListener extends BadListener {
                         }
                         return;
                     } else if (current.getType() == Material.REDSTONE && event.getRawSlot() == event.getInventory().getSize() - 2) {
-                        System.out.println(current);
-                        System.out.println(cursor);
                         if (cursor == null || cursor.getType() == Material.AIR) {
                             lastMoves.remove(player);
                             canCloseInv.add(player);
@@ -136,11 +115,9 @@ public class InventoryClickListener extends BadListener {
                     return;
                 }
 
-                //Check if the clicked slot is any icon
                 Icon icon = customHolder.getIcon(event.getRawSlot());
                 if (icon == null) return;
 
-                //Execute all the actions
                 for (ClickAction clickAction : icon.getClickActions()) {
                     clickAction.execute(player, current);
                 }
@@ -148,12 +125,6 @@ public class InventoryClickListener extends BadListener {
         }
 
 
-    }
-
-    private void addItem(Inventory inventory, List<ItemStack> newInv, int i) {
-        if (inventory.getItem(i) == null)
-            newInv.add(new ItemStack(Material.AIR));
-        newInv.add(inventory.getItem(i));
     }
 
 }

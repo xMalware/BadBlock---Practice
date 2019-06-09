@@ -41,9 +41,11 @@ public class Team {
         return owner;
     }
 
-    public void setOwner(BadblockPlayer owner) {
+    public void setOwner(BadblockPlayer owner, boolean onQuit) {
         this.owner.sendMessage(Team.PREFIX+"Vous n'êtes plus le chef de cette Team");
-        slaves.add(owner);
+        if(!onQuit){
+            slaves.add(owner);
+        }
         this.owner = owner;
         slaves.remove(owner);
         sendGroupMessage(Team.PREFIX+"Le joueur "+owner.getName()+" est maintenant le chef de cette Team");

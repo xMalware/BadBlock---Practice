@@ -21,10 +21,8 @@ public class EntityDamageListener extends BadListener {
            BadblockPlayer badblockPlayer = (BadblockPlayer) event.getEntity();
            if(!Game.isInGame(badblockPlayer)){
                event.setCancelled(true);
-               System.out.println("bonsoir");
                return;
            }
-           System.out.println("enchanté");
            event.setCancelled(false);
        }
    }
@@ -34,24 +32,20 @@ public class EntityDamageListener extends BadListener {
         if(event.getDamager() instanceof BadblockPlayer && event.getEntity() instanceof BadblockPlayer){
             BadblockPlayer damaged = (BadblockPlayer) event.getEntity();
             BadblockPlayer damager = (BadblockPlayer) event.getDamager();
-            System.out.println("odngpoerhntpej,r^j");
-            damager.updateInventory();
 
             if (Game.isInGame(damaged) && Game.isInGame(damager)) {
                 Team team = Team.getTeam(damaged);
                 if (team != null && team.getAllPlayers().contains(damager)) {
-                    System.out.println("same team");
                     event.setCancelled(true);
                     return;
                 }
             } else {
+
                 event.setCancelled(true);
-                System.out.println("set cancelled true entitydamage by entity");
                 return;
             }
         }
 
-        System.out.println("set cancelled FALSE entitydamage by entity");
         event.setCancelled(false);
     }
 

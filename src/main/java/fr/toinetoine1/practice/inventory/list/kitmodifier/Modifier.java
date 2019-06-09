@@ -24,9 +24,6 @@ public class Modifier extends CustomHolder {
         super(9 * 6, mode.getFormattedName() + " §3» " + kit.getFormattedName());
 
         PPlayer pPlayer = PPlayer.get(player);
-        System.out.println(pPlayer);
-        System.out.println(pPlayer.getInfos());
-        System.out.println(pPlayer.getInfos().get(mode));
         ItemStack[] contents;
         if (pPlayer.getInfos().get(mode).getModified() != null && pPlayer.getInfos().get(mode).getModified().containsKey(kit.getFormattedName())){
             contents = pPlayer.getInfos().get(mode).getModified().get(kit.getFormattedName()).getContents();

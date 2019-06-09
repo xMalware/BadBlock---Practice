@@ -15,12 +15,10 @@ public class PlayerDropListener extends BadListener {
     @EventHandler(priority = EventPriority.MONITOR)
     public void onDrop(PlayerDropItemEvent event){
         BadblockPlayer player = (BadblockPlayer) event.getPlayer();
-        System.out.println("drop item");
 
         if(InventoryClickListener.getLastMoves().containsKey(player)){
             event.getItemDrop().remove();
             event.setCancelled(true);
-            System.out.println("cancel");
         }
 
     }

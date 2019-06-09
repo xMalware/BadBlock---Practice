@@ -6,6 +6,7 @@ package fr.toinetoine1.practice.inventory;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +32,25 @@ public class Icon {
 
     public List<ClickAction> getClickActions() {
         return this.clickActions;
+    }
+
+    public void addAmount(int amount){
+        int totalAmount = itemStack.getAmount() + amount;
+        itemStack.setAmount(totalAmount > 64 ? 64 : totalAmount);
+    }
+
+    public void removeAmount(int amount){
+        int totalAmount = itemStack.getAmount() - amount;
+        itemStack.setAmount(totalAmount < 1 ? 1 : totalAmount);
+    }
+
+    public int getAmount(){
+        return itemStack.getAmount();
+    }
+
+    public void setLore(List<String> lore){
+        ItemMeta meta = itemStack.getItemMeta();
+        meta.setLore(lore);
+        itemStack.setItemMeta(meta);
     }
 }

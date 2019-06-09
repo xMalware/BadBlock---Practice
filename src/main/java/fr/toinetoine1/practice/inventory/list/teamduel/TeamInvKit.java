@@ -25,6 +25,7 @@ public class TeamInvKit extends CustomHolder {
         int i = 0;
         for (Kit kit : Kit.getDefaultsKit().get(mode)) {
             ItemStack itemStack = kit.getRepresentedMats().clone();
+            itemStack.setAmount(1);
             ItemMeta meta = itemStack.getItemMeta().clone();
             meta.setDisplayName(kit.getFormattedName());
             meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);

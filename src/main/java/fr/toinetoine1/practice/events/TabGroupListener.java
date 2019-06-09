@@ -74,7 +74,6 @@ public class TabGroupListener extends BadListener
 	@SuppressWarnings("deprecation")
 	public void update(BadblockPlayer player)
 	{
-		System.out.println("player group: " + player.getMainGroup());
 		Scoreboard scoreboard = player.getScoreboard();
 		
 		if (scoreboard == null)

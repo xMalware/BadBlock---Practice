@@ -1,7 +1,10 @@
 fr\toinetoine1\practice\inventory\list\KitChoice.class
 fr\toinetoine1\practice\utils\GsonFactory$DateGsonAdapter.class
+fr\toinetoine1\practice\commands\ViewInvCommand.class
 fr\toinetoine1\practice\events\PlayerDropListener.class
 fr\toinetoine1\practice\events\PlayerDeathListener.class
+fr\toinetoine1\practice\events\EntityRegainHealthListener.class
+fr\toinetoine1\practice\events\BlockPlaceListener.class
 fr\toinetoine1\practice\events\PlayerInteractListener.class
 fr\toinetoine1\practice\utils\GsonFactory$ItemStackGsonAdapter$1.class
 fr\toinetoine1\practice\commands\SpawnCommand.class
@@ -11,7 +14,9 @@ fr\toinetoine1\practice\inventory\list\kitmodifier\Modifier.class
 fr\toinetoine1\practice\inventory\list\teamduel\TeamInvKit.class
 fr\toinetoine1\practice\utils\GsonFactory$NewItemStackAdapter.class
 fr\toinetoine1\practice\events\PlayerQuitListener.class
+fr\toinetoine1\practice\core\Queue$QueueReporter.class
 fr\toinetoine1\practice\utils\ItemBuilder$Unsafe$ReflectionUtils.class
+fr\toinetoine1\practice\events\TabGroupListener$1.class
 fr\toinetoine1\practice\data\kit\PlayerModeInfo.class
 fr\toinetoine1\practice\map\Map.class
 fr\toinetoine1\practice\inventory\list\kitmodifier\KitModifier.class
@@ -24,6 +29,7 @@ fr\toinetoine1\practice\commands\ManageCommand.class
 fr\toinetoine1\practice\data\kit\ModifiedKit.class
 fr\toinetoine1\practice\events\PlayerConsumeListener.class
 fr\toinetoine1\practice\database\request\MapRequest.class
+fr\toinetoine1\practice\events\PlayerTeleportListener.class
 fr\toinetoine1\practice\events\InventoryCloseListener.class
 fr\toinetoine1\practice\utils\HotBarSelector.class
 fr\toinetoine1\practice\utils\Cuboid$CuboidDirection.class
@@ -42,7 +48,10 @@ fr\toinetoine1\practice\inventory\list\kitmodifier\ModeModifier.class
 fr\toinetoine1\practice\utils\Cuboid.class
 fr\toinetoine1\practice\data\Mode.class
 fr\toinetoine1\practice\commands\SetSpawnCommand.class
+fr\toinetoine1\practice\events\PlayerJoinListener$1.class
 fr\toinetoine1\practice\events\InventoryDragListener.class
+fr\toinetoine1\practice\data\kit\Stats.class
+fr\toinetoine1\practice\inventory\list\EndGamePlayerInventory.class
 fr\toinetoine1\practice\data\kit\RankedPlayerModeInfo.class
 fr\toinetoine1\practice\database\DatabaseCredentials.class
 fr\toinetoine1\practice\utils\GsonFactory$LocationGsonAdapter.class
@@ -54,6 +63,7 @@ fr\toinetoine1\practice\database\DatabaseAccess.class
 fr\toinetoine1\practice\utils\GsonFactory$ItemStackGsonAdapter.class
 fr\toinetoine1\practice\commands\KitCommand$KitEdit.class
 fr\toinetoine1\practice\core\Queue.class
+fr\toinetoine1\practice\inventory\list\LeaderBoardInv.class
 fr\toinetoine1\practice\commands\JoinTeamCommand.class
 fr\toinetoine1\practice\database\request\InfoRequest.class
 fr\toinetoine1\practice\inventory\list\teamduel\TeamInv$3.class
@@ -64,7 +74,9 @@ fr\toinetoine1\practice\inventory\Icon.class
 fr\toinetoine1\practice\commands\KitCommand.class
 fr\toinetoine1\practice\utils\GsonFactory$1.class
 fr\toinetoine1\practice\inventory\list\statsandparameter\stats\StatsInv$1.class
+fr\toinetoine1\practice\database\request\StatsRequest.class
 fr\toinetoine1\practice\database\DatabaseManager.class
+fr\toinetoine1\practice\utils\FakeInventory.class
 fr\toinetoine1\practice\inventory\list\statsandparameter\StatsAndParameter$2.class
 fr\toinetoine1\practice\inventory\list\statsandparameter\stats\StatsInv.class
 fr\toinetoine1\practice\events\InventoryClickListener.class
@@ -75,6 +87,7 @@ fr\toinetoine1\practice\inventory\list\kitmodifier\ModeModifier$1.class
 fr\toinetoine1\practice\data\kit\KitLoader$1.class
 fr\toinetoine1\practice\data\kit\KitLoader.class
 fr\toinetoine1\practice\inventory\InteractiveHolder.class
+fr\toinetoine1\practice\core\Game$2.class
 fr\toinetoine1\practice\inventory\list\teamduel\TeamInv$1.class
 fr\toinetoine1\practice\config\ConfigManager.class
 fr\toinetoine1\practice\inventory\list\KitChoice$1.class
@@ -85,14 +98,18 @@ fr\toinetoine1\practice\utils\ItemInventory.class
 fr\toinetoine1\practice\core\Game.class
 fr\toinetoine1\practice\commands\MapCommand.class
 fr\toinetoine1\practice\team\Team.class
+fr\toinetoine1\practice\data\stats\CustomStats.class
 fr\toinetoine1\practice\core\Game$1.class
 fr\toinetoine1\practice\database\request\DataRequest.class
 fr\toinetoine1\practice\commands\TeamCommand.class
 fr\toinetoine1\practice\utils\FakeTeam.class
+fr\toinetoine1\practice\events\TabGroupListener.class
 fr\toinetoine1\practice\PracticeMapProtector.class
 fr\toinetoine1\practice\utils\LocationAdapter.class
 fr\toinetoine1\practice\inventory\list\statsandparameter\StatsAndParameter.class
+fr\toinetoine1\practice\events\TabGroupListener$2.class
 fr\toinetoine1\practice\inventory\list\teamduel\TeamInv$2.class
 fr\toinetoine1\practice\utils\Cuboid$1.class
 fr\toinetoine1\practice\utils\Cuboid$CuboidIterator.class
 fr\toinetoine1\practice\utils\GsonFactory$ExposeExlusion.class
+fr\toinetoine1\practice\utils\InfoStats.class

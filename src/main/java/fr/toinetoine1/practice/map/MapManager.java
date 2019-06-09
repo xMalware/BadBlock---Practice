@@ -7,14 +7,18 @@ import lombok.Setter;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class MapManager {
+
+    private final static Random RANDOM = new Random();
 
     @Getter
     private static List<Map> maps;
     @Getter@Setter
     private static int actualKey = 0;
+
 
     public static void load() {
         maps = MapRequest.loadMaps();
@@ -30,7 +34,7 @@ public class MapManager {
         if(availableMaps.isEmpty())
             return null;
 
-        Map map = availableMaps.get(0);
+        Map map = availableMaps.get(RANDOM.nextInt(availableMaps.size()));
         map.setUsed(true);
         return map;
     }

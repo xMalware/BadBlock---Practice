@@ -4,6 +4,8 @@ import fr.toinetoine1.practice.Practice;
 import fr.toinetoine1.practice.data.Rank;
 import fr.toinetoine1.practice.database.request.KitRequest;
 import fr.toinetoine1.practice.database.request.MapRequest;
+import fr.toinetoine1.practice.database.request.StatsRequest;
+import fr.toinetoine1.practice.inventory.list.LeaderBoardInv;
 import fr.toinetoine1.practice.map.MapManager;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -36,16 +38,16 @@ public enum DatabaseManager {
 
         Rank.initRanks();
         KitRequest.loadKits();
+        StatsRequest.updateStats(null);
         new BukkitRunnable(){
             @Override
             public void run() {
                 MapManager.load();
             }
-        }.runTaskLater(Practice.getInstance(), 15 * 20);
+        }.runTaskLater(Practice.getInstance(), 7 * 20);
     }
 
     public static void closeAllDatabaseConnections(){
-        MapRequest.saveMaps();
         KitRequest.saveKits();
         for(DatabaseManager databaseManager : DatabaseManager.values()){
             databaseManager.getDatabaseAccess().closePool();

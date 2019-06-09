@@ -19,7 +19,7 @@ public class ASyncPlayerChatListener extends BadListener {
         BadblockPlayer player = (BadblockPlayer) event.getPlayer();
         PPlayer pPlayer = PPlayer.get(player);
 
-        event.setFormat("§9[§3"+((RankedPlayerModeInfo) pPlayer.getInfos().get(Mode.RANKEDONE)).getPoints()+"§9] " + pPlayer.getCustomRank().getFormattedName()+" "+player.getName()+"»§7 %2$s");
+        event.setFormat("§9[§3"+((RankedPlayerModeInfo) pPlayer.getInfos().get(Mode.RANKEDONE)).getPoints()+"§9] "+ player.getGroupPrefix().getAsLine(player) + pPlayer.getCustomRank().getFormattedName()+" "+player.getName()+"»§7 %2$s");
     }
 
 }

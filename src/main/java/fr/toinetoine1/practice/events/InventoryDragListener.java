@@ -36,7 +36,6 @@ public class InventoryDragListener extends BadListener {
         {
             if (event.getView().getTopInventory().getHolder() instanceof CustomHolder) {
 
-                System.out.println("cancel event");
                 event.setCancelled(true);
 
                 if (event.getWhoClicked() instanceof Player) {

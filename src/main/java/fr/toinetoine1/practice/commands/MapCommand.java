@@ -6,7 +6,6 @@ package fr.toinetoine1.practice.commands;
 
 import fr.badblock.gameapi.command.AbstractCommand;
 import fr.badblock.gameapi.players.BadblockPlayer;
-import fr.badblock.gameapi.utils.selections.CuboidSelection;
 import fr.toinetoine1.practice.data.Mode;
 import fr.toinetoine1.practice.map.Map;
 import fr.toinetoine1.practice.map.MapManager;
@@ -17,7 +16,6 @@ import org.bukkit.command.CommandSender;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.function.Predicate;
 
 public class MapCommand extends AbstractCommand {
 
@@ -47,9 +45,9 @@ public class MapCommand extends AbstractCommand {
 
                     for (Map map : MapManager.getMaps()) {
                         if (map.isEnable())
-                            active.append(map.getKey()).append("§7(").append(map.getMode().getFormattedName()).append("§7)").append("§e,");
+                            active.append(map.getKey()).append("§7(").append(map.getMode().getFormattedName()).append(", §c").append(map.isUsed()).append("§7)").append("§e,");
                         else
-                            inactive.append(map.getKey()).append("§7(").append(map.getMode().getFormattedName()).append("§7)").append("§e,");
+                            inactive.append(map.getKey()).append("§7(").append(map.getMode().getFormattedName()).append(", §c").append(map.isUsed()).append("§7)").append("§e,");
                     }
 
                     player.sendMessage("§cMap active: §e" + active.toString());
