@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="146">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -133,7 +133,6 @@
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/commands/MapCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/EntityRegainHealthListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/BlockBreakListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/DataRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/kitmodifier/Modifier.java" />
@@ -146,8 +145,9 @@
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/LeaderBoardInv.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/database/request/StatsRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/events/PlayerDropListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/map/MapManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java" />
       </list>
     </option>
   </component>
@@ -170,8 +170,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
+    <option name="x" value="-195" />
+    <option name="y" value="4" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -221,7 +221,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="practice" type="462c0819:PsiDirectoryNode" />
-              <item name="commands" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Practice" type="b2602c69:ProjectViewProjectNode" />
@@ -234,8 +234,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -448,11 +448,12 @@
       <workItem from="1559994166244" duration="617000" />
       <workItem from="1559995577619" duration="622000" />
       <workItem from="1560012618228" duration="669000" />
+      <workItem from="1560157210071" duration="966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="473401000" />
+    <option name="totallyTimeSpent" value="476605000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -464,10 +465,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2867804" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28645834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -476,7 +477,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32998884" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3297062" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -508,13 +509,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/inventory/list/teamduel/TeamInv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/utils/ItemBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -868,18 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="235" lean-forward="true" selection-start-line="235" selection-end-line="235" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10496#14565#0" expanded="true" />
-            <element signature="e#14564#14565#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/map/MapManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -901,10 +883,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/scoreboard/PracticeScoreboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/core/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="365" lean-forward="true" selection-start-line="365" selection-end-line="365" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/toinetoine1/practice/Practice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="146">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
