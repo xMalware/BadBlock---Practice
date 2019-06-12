@@ -46,6 +46,7 @@ public class MapRequest {
             while (resultSet.next()) {
                 int key = resultSet.getInt("keyy");
                 Location[] positions = gson.fromJson(resultSet.getString("positions"), Location[].class);
+                String mapName = resultSet.getString("mapname");
                 boolean enable = resultSet.getBoolean("enable");
                 Mode mode = Mode.valueOf(resultSet.getString("mode"));
                 Cuboid cuboidSelection = gson.fromJson(resultSet.getString("cuboid"), Cuboid.class);
@@ -53,7 +54,7 @@ public class MapRequest {
                 if(key > MapManager.getActualKey())
                     MapManager.setActualKey(key);
 
-                maps.add(new Map(false, key, positions, enable, mode, cuboidSelection));
+                maps.add(new Map(false, key, mapName, positions, enable, mode, cuboidSelection));
             }
 
             preparedStatement.close();
@@ -72,12 +73,13 @@ public class MapRequest {
             connection.prepareStatement("TRUNCATE TABLE maps").execute();
 
             for(Map map : MapManager.getMaps()){
-                final PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO maps (keyy, positions, enable, mode, cuboid) VALUES (?, ?, ?, ?, ?)");
+                final PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO maps (keyy, mapname, positions, enable, mode, cuboid) VALUES (?, ?, ?, ?, ?, ?)");
                 preparedStatement.setInt(1, map.getKey());
-                preparedStatement.setString(2, gson.toJson(map.getLocations()));
-                preparedStatement.setBoolean(3, map.isEnable());
-                preparedStatement.setString(4, map.getMode().name());
-                preparedStatement.setString(5, gson.toJson(map.getCuboid()));
+                preparedStatement.setString(2, map.getMapName());
+                preparedStatement.setString(3, gson.toJson(map.getLocations()));
+                preparedStatement.setBoolean(4, map.isEnable());
+                preparedStatement.setString(5, map.getMode().name());
+                preparedStatement.setString(6, gson.toJson(map.getCuboid()));
                 preparedStatement.executeUpdate();
 
                 preparedStatement.close();

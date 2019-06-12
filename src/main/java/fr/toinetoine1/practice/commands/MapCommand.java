@@ -44,10 +44,10 @@ public class MapCommand extends AbstractCommand {
                     StringBuilder inactive = new StringBuilder();
 
                     for (Map map : MapManager.getMaps()) {
-                        if (map.isEnable())
-                            active.append(map.getKey()).append("§7(").append(map.getMode().getFormattedName()).append(", §c").append(map.isUsed()).append("§7)").append("§e,");
-                        else
-                            inactive.append(map.getKey()).append("§7(").append(map.getMode().getFormattedName()).append(", §c").append(map.isUsed()).append("§7)").append("§e,");
+                        if (map.isEnable()) {
+                            active.append("§eID: §3").append(map.getKey()).append(" §eMode: §c").append(map.getMode().getFormattedName()).append(" §eUsed: §c").append(map.isUsed()).append(" §eName: §c").append(map.getMapName()).append("\n");
+                        } else
+                            inactive.append("§eID: §3").append(map.getKey()).append(" §eMode: §c").append(map.getMode().getFormattedName()).append(" §eUsed: §c").append(map.isUsed()).append(" §eName: §c").append(map.getMapName()).append("\n");
                     }
 
                     player.sendMessage("§cMap active: §e" + active.toString());
@@ -69,27 +69,27 @@ public class MapCommand extends AbstractCommand {
                 Map map = edit.get(player);
                 boolean canFinish = true;
 
-                for(int i = 0; i <= ((map.getMode().getSize() * 2) - 1); i++){
-                    if(map.getLocations()[i] == null){
+                for (int i = 0; i <= ((map.getMode().getSize() * 2) - 1); i++) {
+                    if (map.getLocations()[i] == null) {
                         canFinish = false;
                         break;
                     }
                 }
-                if(map.getCuboid().loc1 == null || map.getCuboid().loc2 == null){
+                if (map.getCuboid().loc1 == null || map.getCuboid().loc2 == null) {
                     player.sendMessage("§cUne des positions du Cuboid est invalide !");
                     return false;
                 } else {
                     map.getCuboid().initCuboid();
                 }
 
-                if(canFinish){
+                if (canFinish) {
                     MapManager.getMaps().add(map);
                     edit.remove(player);
                     player.sendMessage("§cVotre Map a bien été enregistrée !");
                 } else {
                     player.sendMessage("§cImpossible, Une des positions est null !");
                 }
-            }else if (args[0].equalsIgnoreCase("cancel")) {
+            } else if (args[0].equalsIgnoreCase("cancel")) {
                 if (!edit.containsKey(player)) {
                     player.sendMessage("§cVous devez déja créer une Map !");
                     return false;
@@ -153,29 +153,13 @@ public class MapCommand extends AbstractCommand {
 
                 Mode mode = edit.get(player).getMode();
                 int i = Integer.parseInt(args[1]);
-                if (i < 1 || i > (mode.getSize()*2)) {
-                    player.sendMessage("§cVous devez saisir un nombre entre 1 et "+mode.getSize()*2+" !");
+                if (i < 1 || i > (mode.getSize() * 2)) {
+                    player.sendMessage("§cVous devez saisir un nombre entre 1 et " + mode.getSize() * 2 + " !");
                     return false;
                 }
 
                 edit.get(player).getLocations()[i - 1] = player.getLocation();
                 player.sendMessage("§cLa location a bien été enregistrée !");
-            } else if (args[0].equalsIgnoreCase("create")) {
-                if (edit.containsKey(player)) {
-                    player.sendMessage("§cVous êtes déja dans le mode d'édition, si vous souhaitez quitter ce mode, éxécuter: /map cancel");
-                    return false;
-                }
-
-                if(Arrays.stream(Mode.values()).anyMatch(mode -> mode.name().toUpperCase().equalsIgnoreCase(args[1].toUpperCase()))){
-                    Mode mode = Mode.valueOf(args[1].toUpperCase());
-
-                    player.sendMessage("§eBienvenue dans le créateur de Map, voici les commandes disponibles:");
-                    sendMapEditMessage(player, mode.getSize() * 2+"");
-                    edit.put(player, new Map(false, MapManager.incrementAndGet(), new Location[6], false, mode, new Cuboid()));
-                } else {
-                    KitCommand.sendModeMessage(player);
-                }
-
             } else if (args[0].equalsIgnoreCase("setcuboid")) {
                 if (!edit.containsKey(player)) {
                     player.sendMessage("§cVous devez déja créer une Map !");
@@ -187,7 +171,6 @@ public class MapCommand extends AbstractCommand {
                     return false;
                 }
 
-                Mode mode = edit.get(player).getMode();
                 int i = Integer.parseInt(args[1]);
                 if (i != 1 && i != 2) {
                     player.sendMessage("§cVous devez saisir soit 1 ou 2 !");
@@ -195,9 +178,35 @@ public class MapCommand extends AbstractCommand {
                 }
 
                 edit.get(player).getCuboid().setLocation(i, player.getLocation());
-                player.sendMessage("§cLa position "+i+" du cuboid a bien enregistré");
+                player.sendMessage("§cLa position " + i + " du cuboid a bien enregistré");
+            } else if (args[0].equalsIgnoreCase("tp")) {
+                if (MapManager.getMaps().stream().map(Map::getMapName).anyMatch(s -> s.equals(args[1]))) {
+                    Map map = MapManager.getMaps().stream().filter(map1 -> map1.getMapName().equals(args[1])).findFirst().get();
+
+                    player.teleport(map.getLocations()[0]);
+                    player.sendMessage("§cVous avez été TP à la map: §9" + map.getMapName());
+                }
+
             }
 
+        } else if (args.length == 3) {
+            if (args[0].equalsIgnoreCase("create")) {
+                if (edit.containsKey(player)) {
+                    player.sendMessage("§cVous êtes déja dans le mode d'édition, si vous souhaitez quitter ce mode, éxécuter: /map cancel");
+                    return false;
+                }
+
+                if (Arrays.stream(Mode.values()).anyMatch(mode -> mode.name().toUpperCase().equalsIgnoreCase(args[1].toUpperCase()))) {
+                    Mode mode = Mode.valueOf(args[1].toUpperCase());
+
+                    player.sendMessage("§eBienvenue dans le créateur de Map, voici les commandes disponibles:");
+                    sendMapEditMessage(player, mode.getSize() * 2 + "");
+                    edit.put(player, new Map(false, MapManager.incrementAndGet(), args[2], new Location[6], false, mode, new Cuboid()));
+                } else {
+                    KitCommand.sendModeMessage(player);
+                }
+
+            }
         }
 
         return false;
@@ -205,7 +214,7 @@ public class MapCommand extends AbstractCommand {
 
     private void sendMapEditMessage(BadblockPlayer player, String nb) {
         player.sendMessage("   ");
-        player.sendMessage("§e/map set <1 à "+nb+">: §7- §aIndique les positions de la Map");
+        player.sendMessage("§e/map set <1 à " + nb + ">: §7- §aIndique les positions de la Map");
         player.sendMessage("§e/map setcuboid <1/2>: §7- §aCuboid de la Map");
         player.sendMessage("§e/map view: §7- §aVoir les positions actuelles");
         player.sendMessage("§e/map finish: §7- §aIndiquer que la configuration est terminée");
@@ -215,8 +224,9 @@ public class MapCommand extends AbstractCommand {
     private void sendHelpMessage(CommandSender player) {
         player.sendMessage("§m§7                                                         ");
         player.sendMessage("§e/map help <1/2> §7- §aVoir l'aide");
-        player.sendMessage("§e/map create <Mode> §7- §aCréer une nouvelle Map");
+        player.sendMessage("§e/map create <Mode> <Nom> §7- §aCréer une nouvelle Map");
         player.sendMessage("§e/map delete <Key> §7- §aSupprime une nouvelle Map");
+        player.sendMessage("§e/map tp <Nom> §7- §aSe TP à une Map");
         player.sendMessage("§e/map enable <Key> §7- §aActiver une Map");
         player.sendMessage("§e/map disable <Key> §7- §aDésactiver une Map");
         player.sendMessage("§e/map list §7- §aVoir les Maps activés/désactivés");

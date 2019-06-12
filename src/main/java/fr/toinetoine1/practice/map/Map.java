@@ -16,6 +16,7 @@ public class Map {
 
     private transient boolean isUsed;
     private int key;
+    private String mapName;
     private Location[] locations;
     private boolean isEnable;
     private Mode mode;

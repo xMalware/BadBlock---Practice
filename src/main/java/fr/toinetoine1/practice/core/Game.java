@@ -355,7 +355,7 @@ public class Game implements Listener {
     }
 
     private void removeUnsafe() {
-        List<Material> unsafeBlocks = new ArrayList<>(Arrays.asList(Material.COBBLESTONE, Material.STONE, Material.LAVA, Material.STATIONARY_LAVA, Material.WATER, Material.STATIONARY_WATER, Material.OBSIDIAN, Material.WOOD));
+        List<Material> unsafeBlocks = new ArrayList<>(Arrays.asList(Material.COBBLESTONE, Material.STONE, Material.LAVA, Material.STATIONARY_LAVA, Material.WATER, Material.STATIONARY_WATER, Material.OBSIDIAN));
         List<Block> blocks = map.getCuboid().getBlocks();
         blocks.forEach(block -> {
             if (unsafeBlocks.contains(block.getType()) || placedBlocks.contains(block))
