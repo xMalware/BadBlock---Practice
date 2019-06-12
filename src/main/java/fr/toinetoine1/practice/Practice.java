@@ -13,6 +13,7 @@ import fr.toinetoine1.practice.data.Mode;
 import fr.toinetoine1.practice.database.DatabaseManager;
 import fr.toinetoine1.practice.database.request.MapRequest;
 import fr.toinetoine1.practice.inventory.list.KitChoice;
+import fr.toinetoine1.practice.utils.HolographicScore;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Location;
@@ -53,6 +54,7 @@ public class Practice extends BadblockPlugin {
         initCommandsAndEvents();
         new ConfigManager();
         loadInventory();
+        HolographicScore.getInstance().loadHologram();
         //tabSort = new TabSort(this);
 
         GameAPI.logColor("§c[Practice] Loaded !");

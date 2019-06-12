@@ -1,6 +1,7 @@
 package fr.toinetoine1.practice.config;
 
 import fr.toinetoine1.practice.Practice;
+import fr.toinetoine1.practice.utils.HolographicScore;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -26,6 +27,7 @@ public class ConfigManager {
         ));
 
         loadSpawnLoc();
+        loadHoloLoc();
     }
 
     public static Config getConfigByName(String name) {
@@ -55,6 +57,28 @@ public class ConfigManager {
                 config.getLong("Spawn.pitch"));
 
                 Practice.setSpawnLoc(location);
+    }
+
+    private void loadHoloLoc() {
+        YamlConfiguration config = getConfigByName("spawn.yml").getConfig();
+
+        Location scoreLoc = new Location(Bukkit.getWorld(config.getString("ScoreLocation.world")),
+                config.getDouble("ScoreLocation.x"),
+                config.getDouble("ScoreLocation.y"),
+                config.getDouble("ScoreLocation.z"));
+        HolographicScore.getInstance().setScore(scoreLoc);
+
+        Location killsLoc = new Location(Bukkit.getWorld(config.getString("KillsLocation.world")),
+                config.getDouble("KillsLocation.x"),
+                config.getDouble("KillsLocation.y"),
+                config.getDouble("KillsLocation.z"));
+        HolographicScore.getInstance().setKills(killsLoc);
+
+        Location deathLoc = new Location(Bukkit.getWorld(config.getString("DeathLocation.world")),
+                config.getDouble("DeathLocation.x"),
+                config.getDouble("DeathLocation.y"),
+                config.getDouble("DeathLocation.z"));
+        HolographicScore.getInstance().setDeaths(deathLoc);
     }
 
 }

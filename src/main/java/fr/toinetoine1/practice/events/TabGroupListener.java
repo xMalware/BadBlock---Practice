@@ -30,7 +30,7 @@ import fr.toinetoine1.practice.Practice;
 public class TabGroupListener extends BadListener
 {
 
-	private Map<Permissible, String>	maps					= new HashMap<>();
+	/*private Map<Permissible, String>	maps					= new HashMap<>();
 
 	public TabGroupListener()
 	{
@@ -160,6 +160,6 @@ public class TabGroupListener extends BadListener
 		}
 
 		return (char) (A + id);
-	}
+	}*/
 
 }
