@@ -22,7 +22,6 @@ import org.bukkit.scoreboard.Team;
 import fr.badblock.api.common.utils.permissions.Permissible;
 import fr.badblock.api.common.utils.permissions.PermissionsManager;
 import fr.badblock.gameapi.BadListener;
-import fr.badblock.gameapi.GameAPI;
 import fr.badblock.gameapi.players.BadblockPlayer;
 import fr.badblock.gameapi.utils.BukkitUtils;
 import fr.toinetoine1.practice.Practice;
@@ -30,7 +29,7 @@ import fr.toinetoine1.practice.Practice;
 public class TabGroupListener extends BadListener
 {
 
-	/*private Map<Permissible, String>	maps					= new HashMap<>();
+	private Map<Permissible, String>	maps					= new HashMap<>();
 
 	public TabGroupListener()
 	{
@@ -99,15 +98,13 @@ public class TabGroupListener extends BadListener
 			for (Entry<Permissible, String> entry : maps.entrySet())
 			{
 				Team team = scoreboard.getTeam(entry.getValue());
-				String key = "permissions.tab." + entry.getKey().getName();
-				String stp = GameAPI.getAPI().getI18n().get(key)[0];
+				String stp = ChatColor.translateAlternateColorCodes('&', entry.getKey().getPrefix());
 
 				if (team == null)
 				{
 					team = scoreboard.registerNewTeam(entry.getValue());
 					team.setPrefix(stp);
-					String suffixKey = "permissions.chat_suffix." + entry.getKey().getName();
-					String suffix = GameAPI.getAPI().getI18n().get(suffixKey)[0];
+					String suffix = ChatColor.translateAlternateColorCodes('&', entry.getKey().getSuffix());
 					team.setSuffix(suffix);
 				}
 
@@ -160,6 +157,6 @@ public class TabGroupListener extends BadListener
 		}
 
 		return (char) (A + id);
-	}*/
+	}
 
 }
