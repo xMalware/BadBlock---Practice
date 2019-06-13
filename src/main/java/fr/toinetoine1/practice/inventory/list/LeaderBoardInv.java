@@ -21,6 +21,11 @@ import java.util.stream.Collectors;
 
 public class LeaderBoardInv extends CustomHolder {
 
+    @Getter
+    private static Map<String, RankedPlayerModeInfo> statsMap = new HashMap<>();
+    @Getter
+    private static Map<String, List<InfoStats>> sortedStats = new HashMap<>();
+
     public LeaderBoardInv() {
         super(9, "§8Leaderboard (Kills)");
 
@@ -28,7 +33,7 @@ public class LeaderBoardInv extends CustomHolder {
         for (Kit kit : Kit.getDefaultsKit().get(Mode.RANKEDONE)) {
             List<String> lore = new ArrayList<>();
 
-            List<InfoStats> get = HolographicScore.getInstance().getSortedStats().get(kit.getName());
+            List<InfoStats> get = sortedStats.get(kit.getName());
             for (int i = 0; i < get.size(); i++) {
                 InfoStats info = get.get(i);
                 lore.add("§7" + (i + 1) + ": §c" + info.getPlayerName() + " §3(" + info.getInfo().getStats().get(kit.getName()).getKills() + "§3)");
@@ -43,6 +48,29 @@ public class LeaderBoardInv extends CustomHolder {
             itemStack.setItemMeta(meta);
 
             setIcon((pos++ + 1), new Icon(itemStack));
+        }
+    }
+
+    public static void sortMap(){
+        sortedStats.clear();
+
+        for (Kit kit : Kit.getDefaultsKit().get(Mode.RANKEDONE)) {
+            statsMap.entrySet()
+                    .stream()
+                    .sorted(Comparator.comparingInt(value -> value.getValue().getStats().get(kit.getName()).getKills()))
+                    .collect(Collectors.collectingAndThen(Collectors.toList(), strings -> {
+                        Collections.reverse(strings);
+                        return strings;
+                    }))
+                    .stream()
+                    .limit(10)
+                    .forEach(e -> {
+                        if (sortedStats.containsKey(kit.getName())) {
+                            sortedStats.get(kit.getName()).add(new InfoStats(e.getKey(), e.getValue()));
+                        } else {
+                            sortedStats.put(kit.getName(), new ArrayList<>(Arrays.asList(new InfoStats(e.getKey(), e.getValue()))));
+                        }
+                    });
         }
     }
 

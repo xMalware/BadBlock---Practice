@@ -14,10 +14,7 @@ import fr.toinetoine1.practice.inventory.list.KitChoice;
 import fr.toinetoine1.practice.inventory.list.LeaderBoardInv;
 import fr.toinetoine1.practice.map.Map;
 import fr.toinetoine1.practice.team.Team;
-import fr.toinetoine1.practice.utils.EloCalculator;
-import fr.toinetoine1.practice.utils.FakeInventory;
-import fr.toinetoine1.practice.utils.HotBarSelector;
-import fr.toinetoine1.practice.utils.ItemBuilder;
+import fr.toinetoine1.practice.utils.*;
 import lombok.Data;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -256,6 +253,7 @@ public class Game implements Listener {
 
                 });
                 LeaderBoardInv.sortMap();
+                HolographicScore.getInstance().updateHologram();
                 KitChoice.getKitChoiceMap().get(mode).removeIGPlayer(mode, kit, mode.getSize());
 
                 if (mode.isRanked()) {

@@ -66,19 +66,19 @@ public class ConfigManager {
                 config.getDouble("ScoreLocation.x"),
                 config.getDouble("ScoreLocation.y"),
                 config.getDouble("ScoreLocation.z"));
-        HolographicScore.getInstance().setScore(scoreLoc);
+        HolographicScore.getInstance().setScoreLoc(scoreLoc);
 
         Location killsLoc = new Location(Bukkit.getWorld(config.getString("KillsLocation.world")),
                 config.getDouble("KillsLocation.x"),
                 config.getDouble("KillsLocation.y"),
                 config.getDouble("KillsLocation.z"));
-        HolographicScore.getInstance().setKills(killsLoc);
+        HolographicScore.getInstance().setKillsLoc(killsLoc);
 
         Location deathLoc = new Location(Bukkit.getWorld(config.getString("DeathLocation.world")),
                 config.getDouble("DeathLocation.x"),
                 config.getDouble("DeathLocation.y"),
                 config.getDouble("DeathLocation.z"));
-        HolographicScore.getInstance().setDeaths(deathLoc);
+        HolographicScore.getInstance().setDeathsLoc(deathLoc);
     }
 
 }

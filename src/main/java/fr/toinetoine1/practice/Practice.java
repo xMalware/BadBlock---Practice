@@ -54,7 +54,7 @@ public class Practice extends BadblockPlugin {
         initCommandsAndEvents();
         new ConfigManager();
         loadInventory();
-        HolographicScore.getInstance().loadHologram();
+        HolographicScore.getInstance().updateHologram();
         //tabSort = new TabSort(this);
 
         GameAPI.logColor("§c[Practice] Loaded !");
@@ -78,6 +78,16 @@ public class Practice extends BadblockPlugin {
         spawnConfig.set("Spawn.z", spawnLoc.getZ());
         spawnConfig.set("Spawn.yaw", spawnLoc.getYaw());
         spawnConfig.set("Spawn.pitch", spawnLoc.getPitch());
+
+        spawnConfig.set("ScoreLocation.x", HolographicScore.getInstance().getScoreLoc().getX());
+        spawnConfig.set("ScoreLocation.y", HolographicScore.getInstance().getScoreLoc().getY());
+        spawnConfig.set("ScoreLocation.z", HolographicScore.getInstance().getScoreLoc().getZ());
+        spawnConfig.set("KillsLocation.x", HolographicScore.getInstance().getKillsLoc().getX());
+        spawnConfig.set("KillsLocation.y", HolographicScore.getInstance().getKillsLoc().getY());
+        spawnConfig.set("KillsLocation.z", HolographicScore.getInstance().getKillsLoc().getZ());
+        spawnConfig.set("DeathLocation.x", HolographicScore.getInstance().getDeathsLoc().getX());
+        spawnConfig.set("DeathLocation.y", HolographicScore.getInstance().getDeathsLoc().getY());
+        spawnConfig.set("DeathLocation.z", HolographicScore.getInstance().getDeathsLoc().getZ());
 
         try {
             spawnConfig.save(config.getFile());

@@ -11,6 +11,8 @@ import fr.toinetoine1.practice.data.PPlayer;
 import fr.toinetoine1.practice.data.kit.RankedPlayerModeInfo;
 import fr.toinetoine1.practice.database.request.DataRequest;
 import fr.toinetoine1.practice.database.request.StatsRequest;
+import fr.toinetoine1.practice.inventory.list.LeaderBoardInv;
+import fr.toinetoine1.practice.utils.HolographicScore;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 
@@ -80,6 +82,9 @@ public class ManageCommand extends AbstractCommand {
                     //TabSort.BukkitManager.getTeams().get(pTarget.getCustomRank().getName()).addEntry(target.getName());
                     player.sendMessage(PREFIX + "Vous avez changé le nombre de ELO de §9" + target.getName() + " §6dans le mode " + mode.getFormattedName() + " §6à §c" + newPoints);
                     target.sendMessage(Practice.PREFIX + "Votre nombre de ELO dans le mode " + mode.getFormattedName() + " §ea été modifié à §c" + newPoints);
+                    LeaderBoardInv.getStatsMap().put(target.getName(), (RankedPlayerModeInfo) pTarget.getInfos().get(Mode.RANKEDONE));
+                    LeaderBoardInv.sortMap();
+                    HolographicScore.getInstance().updateHologram();
                 } else {
                     KitCommand.sendModeMessage(player);
                 }
@@ -127,6 +132,9 @@ public class ManageCommand extends AbstractCommand {
                     player.sendMessage(PREFIX + "Le joueur §9" +target.getName()+" §6possède maintenant §c"+totalPoints+" §6dans le mode "+mode.getFormattedName());
                     target.sendMessage(Practice.PREFIX + "§6Votre nombre de points a soudeinement augmenté de §c"+newPoints+" §6dans le mode "+mode.getFormattedName());
                     target.sendMessage(Practice.PREFIX + "§6Vous avez maintenant §c"+totalPoints+" §ed'ELO");
+                    LeaderBoardInv.getStatsMap().put(target.getName(), (RankedPlayerModeInfo) pTarget.getInfos().get(Mode.RANKEDONE));
+                    LeaderBoardInv.sortMap();
+                    HolographicScore.getInstance().updateHologram();
                 } else {
                     KitCommand.sendModeMessage(player);
                 }
